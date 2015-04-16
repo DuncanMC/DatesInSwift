@@ -13,6 +13,7 @@
 		AECB52361ADFD46F00AC9E00 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AECB52351ADFD46F00AC9E00 /* Images.xcassets */; };
 		AECB52391ADFD46F00AC9E00 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = AECB52371ADFD46F00AC9E00 /* LaunchScreen.xib */; };
 		AECB52451ADFD46F00AC9E00 /* DatesInSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB52441ADFD46F00AC9E00 /* DatesInSwiftTests.swift */; };
+		AECB524F1ADFD55300AC9E00 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB524E1ADFD55300AC9E00 /* DateExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		AECB523E1ADFD46F00AC9E00 /* DatesInSwiftTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DatesInSwiftTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AECB52431ADFD46F00AC9E00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AECB52441ADFD46F00AC9E00 /* DatesInSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesInSwiftTests.swift; sourceTree = "<group>"; };
+		AECB524E1ADFD55300AC9E00 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				AECB522E1ADFD46F00AC9E00 /* AppDelegate.swift */,
 				AECB52301ADFD46F00AC9E00 /* ViewController.swift */,
+				AECB524E1ADFD55300AC9E00 /* DateExtensions.swift */,
 				AECB52321ADFD46F00AC9E00 /* Main.storyboard */,
 				AECB52351ADFD46F00AC9E00 /* Images.xcassets */,
 				AECB52371ADFD46F00AC9E00 /* LaunchScreen.xib */,
@@ -214,6 +217,7 @@
 			files = (
 				AECB52311ADFD46F00AC9E00 /* ViewController.swift in Sources */,
 				AECB522F1ADFD46F00AC9E00 /* AppDelegate.swift in Sources */,
+				AECB524F1ADFD55300AC9E00 /* DateExtensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
