@@ -14,8 +14,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
 
 
-  func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-    // Override point for customization after application launch.
+  func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+  {
+
+//Code to generate random mm/dd/yyyy dates from Jan 1, 1930 to Dec 1, 2002
+    /*
+    let startSeconds = round(date(mdy: (1, 1, 1930))!.timeIntervalSinceReferenceDate)
+    
+    let endSeconds = round(date(mdy: (12, 1, 2002))!.timeIntervalSinceReferenceDate)
+    
+    let range = UInt32(round(endSeconds - startSeconds))
+
+    for _ in 1...5
+    {
+      let dateDouble = Double(arc4random_uniform(range))  + startSeconds;
+      let theMDY = NSDate(timeIntervalSinceReferenceDate:  dateDouble).mdy()
+      let dateString = NSString(format: "%02d/%02d/%04d", theMDY.month, theMDY.day, theMDY.year)
+      println("Random date = \(dateString)")
+    }
+*/
     return true
   }
 

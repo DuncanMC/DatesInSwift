@@ -54,12 +54,12 @@ class ViewController: UIViewController
     message = ""
   }
   
-
-  let duncanCsBirthday = (month: 5, day: 18, year: 1963)
-  let markCsBirthday = (month: 4, day: 17, year: 1959)
-  let daveCsBirthay = (month: 1, day: 2, year: 1937)
-  let colinCsBirtday = (month: 12, day: 14, year: 1994)
-  
+  let bobsBirthday =    (month: 11, day: 30, year: 1961)
+  let janesBirthday =   (month: 10, day: 14, year: 1987)
+  let fredsBirthday =   (month: 4, day: 3, year: 1973)
+  let patsBirthday =    (month: 7, day: 7, year: 1931)
+  let susansBirthday =  (month: 3, day: 8, year: 1933)
+    
   @IBAction func handleOkButton(sender: AnyObject)
   {
     let prefix: String
@@ -77,7 +77,7 @@ class ViewController: UIViewController
     {
       prefix = "was"
     }
-    
+    let todayMDY = NSDate().mdy()
     let theMDY = datePicker.date.mdy()
     let date = NSString(format: "%02d/%02d/%04d", theMDY.month, theMDY.day, theMDY.year)
     switch theMDY
@@ -85,35 +85,47 @@ class ViewController: UIViewController
     case (3, 15, _):
       message = "Beware the Ides of March"
       
-    case (daveCsBirthay):
-      message = "\(date) \(prefix) the day Dave Champney was born"
+    case (fredsBirthday):
+      message = "\(date) \(prefix) the day Fred was born"
       
-    case (daveCsBirthay.month, daveCsBirthay.day, let year) where year > daveCsBirthay.year:
-      message = "\(date) \(prefix) Dave Champney's \(possessiveNumber(theMDY.year - daveCsBirthay.year)) birthday"
+    case (fredsBirthday.month, fredsBirthday.day, let year) where year > fredsBirthday.year:
+      message = "\(date) \(prefix) Fred's \(possessiveNumber(theMDY.year - fredsBirthday.year)) birthday"
       
-    case (markCsBirthday):
-      message = "\(date) \(prefix) the day Mark Champney was born"
+    case (janesBirthday):
+      message = "\(date) \(prefix) the day Jane was born"
       
-    case (4, 17, let year) where year > markCsBirthday.year:
-      message = "\(date) \(prefix) Mark Champney's \(possessiveNumber(year - markCsBirthday.year)) birthday"
+    case (janesBirthday.month, janesBirthday.day, let year) where year > janesBirthday.year:
+      message = "\(date) \(prefix) Jane's \(possessiveNumber(year - janesBirthday.year)) birthday"
       
-    case (duncanCsBirthday):
-      message = "\(date) \(prefix) the day Duncan Champney was born"
+    case (bobsBirthday):
+      message = "\(date) \(prefix) the day Bob was born"
       
-    case (duncanCsBirthday.month, duncanCsBirthday.day, let year) where year > duncanCsBirthday.year:
-      message = "\(date) \(prefix) Duncan Champney's \(possessiveNumber(year - duncanCsBirthday.year)) birthday"
+    case (bobsBirthday.month, bobsBirthday.day, let year) where year > bobsBirthday.year:
+      message = "\(date) \(prefix) Bob's \(possessiveNumber(year - bobsBirthday.year)) birthday"
       
-    case (colinCsBirtday):
-      message = "\(date) \(prefix) the day Colin Champney was born"
+    case (patsBirthday):
+      message = "\(date) \(prefix) the day Pat was born"
       
-    case (colinCsBirtday.month, colinCsBirtday.day, let year) where year > colinCsBirtday.year:
-      message = "\(date) \(prefix) Colin Champney's \(possessiveNumber(year - colinCsBirtday.year)) birthday"
+    case (patsBirthday.month, patsBirthday.day, let year) where year > patsBirthday.year:
+      message = "\(date) \(prefix) Pat's \(possessiveNumber(year - patsBirthday.year)) birthday"
+
+    case (susansBirthday):
+      message = "\(date) \(prefix) the day Susan was born"
       
+    case (susansBirthday.month, susansBirthday.day, let year) where year > susansBirthday.year:
+      message = "\(date) \(prefix) Susan \(possessiveNumber(year - susansBirthday.year)) birthday"
+
     case (5, 1...15, let year):
       message = "\(date) \(prefix) in the first half of May, \(year)"
       
     case (5, 16...31, let year):
       message = "\(date) \(prefix) in the second half of May, \(year)"
+      
+    case todayMDY:
+      message = "Today is \(date)"
+      
+    case (4, _, _):
+      message = "April showers bring May flowers"
       
     default:
       message = "The selected date \(prefix) \(date)"

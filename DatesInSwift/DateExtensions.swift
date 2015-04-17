@@ -10,9 +10,21 @@ public typealias mdyTuple = (month: Int, day: Int, year: Int)
 
 import UIKit
 
+func date(#mdy: mdyTuple) ->NSDate?
+{
+  let calendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+  
+  let components = NSDateComponents()
+  components.year = mdy.year
+  components.month = mdy.month
+  components.day = mdy.day
+  
+  return calendar.dateFromComponents(components)
+}
 /**
   This function makes it possible to use mdyTuple constants or variables in the cases
-  of switch statements.
+ 
+of switch statements.
 */
 func ~=(a: mdyTuple, b: mdyTuple) -> Bool {
   return a.month ~= b.month && a.year ~= b.year && a.day ~= b.day
