@@ -415,6 +415,7 @@
 				AECB524A1ADFD46F00AC9E00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AECB524B1ADFD46F00AC9E00 /* Build configuration list for PBXNativeTarget "DatesInSwiftTests" */ = {
 			isa = XCConfigurationList;
@@ -423,6 +424,7 @@
 				AECB524D1ADFD46F00AC9E00 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

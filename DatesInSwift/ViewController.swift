@@ -37,6 +37,11 @@ class ViewController: UIViewController
   }
   @IBOutlet weak var messageLabel: UILabel!
   @IBOutlet weak var datePicker: UIDatePicker!
+  
+  override func viewDidAppear(animated: Bool)
+  {
+    println("IN \(__FUNCTION__)")
+  }
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
@@ -121,6 +126,12 @@ class ViewController: UIViewController
     case (5, 16...31, let year):
       message = "\(date) \(prefix) in the second half of May, \(year)"
       
+    case (2, let day, _) where day % 2 == 0:
+      message = "\(date) \(prefix) an even day in February"
+
+    case (2, let day, _) where day % 2 == 1:
+      message = "\(date) \(prefix) an odd day in February"
+
     case todayMDY:
       message = "Today is \(date)"
       
