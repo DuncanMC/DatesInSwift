@@ -46,14 +46,14 @@ class ViewController: UIViewController
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.
   }
-
+  
   override func didReceiveMemoryWarning()
   {
     super.didReceiveMemoryWarning()
     // Dispose of any resources that can be recreated.
   }
-
-
+  
+  
   @IBAction func pickerValueChanged(sender: AnyObject)
   {
     message = ""
@@ -64,9 +64,11 @@ class ViewController: UIViewController
   let fredsBirthday =   (month: 4, day: 3, year: 1973)
   let patsBirthday =    (month: 7, day: 7, year: 1931)
   let susansBirthday =  (month: 3, day: 8, year: 1933)
-    
+  
   @IBAction func handleOkButton(sender: AnyObject)
   {
+    //Prefix will be used to build date sentences.
+    //Is the user-selected date in the past, present, or future?
     let prefix: String
     
     //I compare the mdy tuples for the dates so I can ignore the time and just compare dates.
@@ -85,6 +87,9 @@ class ViewController: UIViewController
     let todayMDY = NSDate().mdy()
     let theMDY = datePicker.date.mdy()
     let date = NSString(format: "%02d/%02d/%04d", theMDY.month, theMDY.day, theMDY.year)
+    
+    //The cases are evaluated top-to-bottom. 
+    //The code of first match is executed, then processing stops.
     switch theMDY
     {
     case (3, 15, _):
@@ -113,28 +118,33 @@ class ViewController: UIViewController
       
     case (patsBirthday.month, patsBirthday.day, let year) where year > patsBirthday.year:
       message = "\(date) \(prefix) Pat's \(possessiveNumber(year - patsBirthday.year)) birthday"
-
+      
     case (susansBirthday):
       message = "\(date) \(prefix) the day Susan was born"
       
     case (susansBirthday.month, susansBirthday.day, let year) where year > susansBirthday.year:
       message = "\(date) \(prefix) Susan \(possessiveNumber(year - susansBirthday.year)) birthday"
-
+      
+    //Match the month, day range 1...15, and copy the year to a constant.
     case (5, 1...15, let year):
       message = "\(date) \(prefix) in the first half of May, \(year)"
       
     case (5, 16...31, let year):
       message = "\(date) \(prefix) in the second half of May, \(year)"
       
-    case (2, let day, _) where day % 2 == 0:
+    //Match the month, copy the day value to a constant, and match any year.
+    case (2, let day, _)
+      where day % 2 == 0:     //The optional where clause is a boolean expression which must be true
+                              //for the case to match
       message = "\(date) \(prefix) an even day in February"
-
+      
     case (2, let day, _) where day % 2 == 1:
       message = "\(date) \(prefix) an odd day in February"
-
+      
     case todayMDY:
       message = "Today is \(date)"
       
+    //Match Any day in april, any year.
     case (4, _, _):
       message = "April showers bring May flowers"
       

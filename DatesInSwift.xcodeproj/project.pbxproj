@@ -38,6 +38,7 @@
 		AECB52431ADFD46F00AC9E00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AECB52441ADFD46F00AC9E00 /* DatesInSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesInSwiftTests.swift; sourceTree = "<group>"; };
 		AECB524E1ADFD55300AC9E00 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
+		AEFC22771AE74A9F00ED02AA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +94,7 @@
 		AECB522C1ADFD46F00AC9E00 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				AEFC22771AE74A9F00ED02AA /* README.md */,
 				AECB522D1ADFD46F00AC9E00 /* Info.plist */,
 			);
 			name = "Supporting Files";
