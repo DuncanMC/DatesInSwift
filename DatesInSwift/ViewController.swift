@@ -71,12 +71,14 @@ class ViewController: UIViewController
     //Is the user-selected date in the past, present, or future?
     let prefix: String
     
-    //I compare the mdy tuples for the dates so I can ignore the time and just compare dates.
-    if datePicker.date.mdy() == NSDate().mdy()
+    let today = NSDate()
+    
+    let daysFromSelectedDayToToday = datePicker.date.dayNumber() - today.dayNumber()
+    if daysFromSelectedDayToToday == 0
     {
       prefix = "is"
     }
-    else if datePicker.date > NSDate()
+    else if daysFromSelectedDayToToday > 0
     {
       prefix = "will be"
     }
@@ -84,6 +86,7 @@ class ViewController: UIViewController
     {
       prefix = "was"
     }
+    
     let todayMDY = NSDate().mdy()
     let theMDY = datePicker.date.mdy()
     let date = NSString(format: "%02d/%02d/%04d", theMDY.month, theMDY.day, theMDY.year)

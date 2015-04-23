@@ -1,10 +1,10 @@
-#DatesInSwift
+##DatesInSwift
 -----
 This app demonstrates a number of iOS techniques in Swift.
 
 It uses a date picker to let the user select a date. When the user taps the OK button, it displays a variety of messages depending on the date selected.
 
-##Extensions to NSDate
+###Extensions to NSDate
 ------
 The program includes a file DateExtensions.swift that provides a number of useful utlities for working with dates.
 
@@ -17,11 +17,23 @@ There are  utilities that will convert NDate objects back and forth to `mdyTuple
 
 The NSDate instance method  mdy() returns an `mdyTuple`.
 
-The global function date(mdy: myyTyple) takes an `mdyTuple` as input and returns an NSDate.
+The global function date(mdy: mdyTyple) takes an `mdyTuple` as input and returns an NSDate.
+
+It turns out that you can't match tuple constants in the cases of a switch statement by default.
+In order to do that you have to implement the `~=` (pattern match) operator for the tuple type.
+
+For the mdyTuple type, the pattern match function looks like this:
+
+	/**
+	  This function makes it possible to use mdyTuple constants or variables in the cases
+	  of switch statements.
+	*/
+	func ~=(a: mdyTuple, b: mdyTuple) -> Bool {
+	  return a.month ~= b.month && a.year ~= b.year && a.day ~= b.day
+	}
 
 
-
-##Exploring Swift switch statements
+###Exploring Swift switch statements
 ------
 
 Swift has a very powerful version of the switch statement. You can match strings, you can match ranges of values, and you can match tuples.
