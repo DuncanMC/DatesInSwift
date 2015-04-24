@@ -171,7 +171,7 @@ And finally the switch statement:
       message = "\(date) \(prefix) the day Susan was born"
       
     case (susansBirthday.month, susansBirthday.day, let year) where year > susansBirthday.year:
-      message = "\(date) \(prefix) Susan \(possessiveNumber(year - susansBirthday.year)) birthday"
+      message = "\(date) \(prefix) Susan's \(possessiveNumber(year - susansBirthday.year)) birthday"
       
     //Match the month, day range 1...15, and copy the year to a constant.
     case (5, 1...15, let year):

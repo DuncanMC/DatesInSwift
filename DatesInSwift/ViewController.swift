@@ -22,7 +22,13 @@ import UIKit
 func possessiveNumber(aNumber: Int) -> String
 {
   let suffix: String
-  switch (aNumber % 10)
+  if aNumber % 20 >= 11 &&  aNumber % 100 <= 19
+  {
+    suffix = "th"
+  }
+  else
+  {
+  switch aNumber % 10
   {
   case 0, 4...9:
     suffix = "th"
@@ -34,7 +40,7 @@ func possessiveNumber(aNumber: Int) -> String
     suffix = "rd"
   default:
     suffix = ""
-  }
+    }}
   return "\(aNumber)\(suffix)"
 }
 
@@ -202,7 +208,7 @@ required  init(coder: NSCoder)
       message = "\(date) \(prefix) the day Susan was born"
       
     case (susansBirthday.month, susansBirthday.day, let year) where year > susansBirthday.year:
-      message = "\(date) \(prefix) Susan \(possessiveNumber(year - susansBirthday.year)) birthday"
+      message = "\(date) \(prefix) Susan's \(possessiveNumber(year - susansBirthday.year)) birthday"
       
     //Match the month, day range 1...15, and copy the year to a constant.
     case (5, 1...15, let year):

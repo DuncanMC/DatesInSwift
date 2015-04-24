@@ -16,6 +16,7 @@
 		AECB524F1ADFD55300AC9E00 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB524E1ADFD55300AC9E00 /* DateExtensions.swift */; };
 		AED96A6D1AE9956F00D1AA53 /* Dates.data in Resources */ = {isa = PBXBuildFile; fileRef = AED96A6C1AE9956F00D1AA53 /* Dates.data */; };
 		AED96A701AEA819900D1AA53 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED96A6F1AEA819900D1AA53 /* Types.swift */; };
+		AED96A751AEABCE400D1AA53 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED96A741AEABCE400D1AA53 /* UIViewExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		AED96A6C1AE9956F00D1AA53 /* Dates.data */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Dates.data; sourceTree = "<group>"; };
 		AED96A6F1AEA819900D1AA53 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
 		AED96A731AEA927100D1AA53 /* Creating clickable URLS in UITextField that open in your app.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Creating clickable URLS in UITextField that open in your app.md"; sourceTree = SOURCE_ROOT; };
+		AED96A741AEABCE400D1AA53 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		AEFC22781AE74B2C00ED02AA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -85,6 +87,7 @@
 		AECB522B1ADFD46F00AC9E00 /* DatesInSwift */ = {
 			isa = PBXGroup;
 			children = (
+				AED96A741AEABCE400D1AA53 /* UIViewExtensions.swift */,
 				AECB522E1ADFD46F00AC9E00 /* AppDelegate.swift */,
 				AECB52301ADFD46F00AC9E00 /* ViewController.swift */,
 				AECB524E1ADFD55300AC9E00 /* DateExtensions.swift */,
@@ -227,6 +230,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AECB52311ADFD46F00AC9E00 /* ViewController.swift in Sources */,
+				AED96A751AEABCE400D1AA53 /* UIViewExtensions.swift in Sources */,
 				AECB522F1ADFD46F00AC9E00 /* AppDelegate.swift in Sources */,
 				AECB524F1ADFD55300AC9E00 /* DateExtensions.swift in Sources */,
 				AED96A701AEA819900D1AA53 /* Types.swift in Sources */,

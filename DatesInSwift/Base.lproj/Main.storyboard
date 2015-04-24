@@ -53,31 +53,26 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.5" alpha="0.5" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="f3I-mp-V9X"/>
                                     </mask>
                                 </variation>
                             </label>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7sF-5d-hFb" userLabel="VSpacer1">
-                                <rect key="frame" x="0.0" y="300" width="320" height="28"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nd2-sm-HwN">
+                                <rect key="frame" x="5" y="305" width="310" height="170"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="ihc-lh-UOf"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EY6-jZ-8FQ" userLabel="VSpacer2">
-                                <rect key="frame" x="0.0" y="453" width="320" height="27"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="320" id="6kZ-EJ-5T3"/>
-                                </constraints>
-                            </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nd2-sm-HwN">
-                                <rect key="frame" x="5" y="300" width="310" height="180"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="170" id="oON-8v-rp5"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="800" constant="200" id="dNE-JY-cOj"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="oON-8v-rp5"/>
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment>
@@ -383,30 +378,22 @@ Other dates:
                                             </paragraphStyle>
                                         </attributes>
                                     </fragment>
-                                    <fragment content="WTDateLink://?date=05_18_1963">
-                                        <attributes>
-                                            <font key="NSFont" size="17" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="36"/>
-                                                    <textTab alignment="left" location="72"/>
-                                                    <textTab alignment="left" location="108"/>
-                                                    <textTab alignment="left" location="144"/>
-                                                    <textTab alignment="left" location="180"/>
-                                                    <textTab alignment="left" location="216"/>
-                                                    <textTab alignment="left" location="252"/>
-                                                    <textTab alignment="left" location="288"/>
-                                                    <textTab alignment="left" location="324"/>
-                                                    <textTab alignment="left" location="360"/>
-                                                    <textTab alignment="left" location="396"/>
-                                                    <textTab alignment="left" location="432"/>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
                                 </attributedString>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" white="0.5" alpha="0.5" colorSpace="calibratedWhite"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="dNE-JY-cOj"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="9tl-GR-me3"/>
                                 </connections>
@@ -418,25 +405,21 @@ Other dates:
                             <constraint firstItem="cn7-a0-nP5" firstAttribute="top" secondItem="WWY-1h-VzS" secondAttribute="bottom" constant="60" id="1qj-Ww-eFy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0z3-Ag-U3N" secondAttribute="trailing" id="2ia-TC-h5A"/>
                             <constraint firstItem="0z3-Ag-U3N" firstAttribute="top" secondItem="WWY-1h-VzS" secondAttribute="bottom" constant="10" id="516-AQ-5sN"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Nd2-sm-HwN" secondAttribute="bottom" constant="5" id="5ao-aa-rp4"/>
                             <constraint firstAttribute="trailing" secondItem="Nd2-sm-HwN" secondAttribute="trailing" constant="5" id="6Ue-vC-lDO"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="EY6-jZ-8FQ" secondAttribute="bottom" id="7gF-3I-aC4"/>
+                            <constraint firstItem="Nd2-sm-HwN" firstAttribute="top" secondItem="cn7-a0-nP5" secondAttribute="bottom" constant="5" id="6t4-32-r6w"/>
                             <constraint firstAttribute="centerX" secondItem="cn7-a0-nP5" secondAttribute="centerX" id="AZ6-au-o1a"/>
                             <constraint firstItem="0z3-Ag-U3N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="J1m-4U-QlU"/>
                             <constraint firstItem="05e-2K-TUH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="JLD-dk-gTx"/>
                             <constraint firstItem="cn7-a0-nP5" firstAttribute="top" secondItem="0z3-Ag-U3N" secondAttribute="bottom" constant="2" id="QGj-YE-LDy"/>
-                            <constraint firstItem="Nd2-sm-HwN" firstAttribute="top" secondItem="7sF-5d-hFb" secondAttribute="bottom" id="S39-Hz-5DJ"/>
-                            <constraint firstItem="7sF-5d-hFb" firstAttribute="top" secondItem="cn7-a0-nP5" secondAttribute="bottom" id="TOA-rS-7TP"/>
-                            <constraint firstItem="EY6-jZ-8FQ" firstAttribute="top" secondItem="Nd2-sm-HwN" secondAttribute="bottom" id="YIG-fI-m6L"/>
                             <constraint firstItem="WWY-1h-VzS" firstAttribute="top" secondItem="05e-2K-TUH" secondAttribute="bottom" constant="2" id="ZYf-MA-jqo"/>
                             <constraint firstItem="Nd2-sm-HwN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="bOP-sV-clp"/>
-                            <constraint firstAttribute="centerX" secondItem="7sF-5d-hFb" secondAttribute="centerX" id="dHM-Fo-bBS"/>
-                            <constraint firstAttribute="centerX" secondItem="EY6-jZ-8FQ" secondAttribute="centerX" id="gcy-DF-Qge"/>
                             <constraint firstItem="WWY-1h-VzS" firstAttribute="centerX" secondItem="05e-2K-TUH" secondAttribute="centerX" id="iHT-DY-VQT"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0z3-Ag-U3N" secondAttribute="bottom" constant="10" id="mZu-Ki-ga6"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0z3-Ag-U3N" secondAttribute="bottom" constant="10" id="o1O-6y-Y9h"/>
                             <constraint firstAttribute="centerX" secondItem="05e-2K-TUH" secondAttribute="centerX" id="oYP-lM-MeP"/>
                             <constraint firstAttribute="trailing" secondItem="0z3-Ag-U3N" secondAttribute="trailing" constant="10" id="s3O-cc-XQg"/>
-                            <constraint firstItem="EY6-jZ-8FQ" firstAttribute="height" secondItem="7sF-5d-hFb" secondAttribute="height" id="vaB-BR-QV9"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Nd2-sm-HwN" secondAttribute="bottom" constant="2" id="v5R-uQ-vWn"/>
                             <constraint firstItem="0z3-Ag-U3N" firstAttribute="top" secondItem="WWY-1h-VzS" secondAttribute="bottom" constant="2" id="zaE-gJ-Xfy"/>
                         </constraints>
                         <variation key="default">
@@ -447,6 +430,7 @@ Other dates:
                                 <exclude reference="1qj-Ww-eFy"/>
                                 <exclude reference="mZu-Ki-ga6"/>
                                 <exclude reference="o1O-6y-Y9h"/>
+                                <exclude reference="v5R-uQ-vWn"/>
                             </mask>
                         </variation>
                     </view>
