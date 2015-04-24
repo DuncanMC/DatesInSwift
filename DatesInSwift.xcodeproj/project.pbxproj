@@ -15,6 +15,7 @@
 		AECB52451ADFD46F00AC9E00 /* DatesInSwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB52441ADFD46F00AC9E00 /* DatesInSwiftTests.swift */; };
 		AECB524F1ADFD55300AC9E00 /* DateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB524E1ADFD55300AC9E00 /* DateExtensions.swift */; };
 		AED96A6D1AE9956F00D1AA53 /* Dates.data in Resources */ = {isa = PBXBuildFile; fileRef = AED96A6C1AE9956F00D1AA53 /* Dates.data */; };
+		AED96A701AEA819900D1AA53 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED96A6F1AEA819900D1AA53 /* Types.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,8 @@
 		AECB52441ADFD46F00AC9E00 /* DatesInSwiftTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesInSwiftTests.swift; sourceTree = "<group>"; };
 		AECB524E1ADFD55300AC9E00 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		AED96A6C1AE9956F00D1AA53 /* Dates.data */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Dates.data; sourceTree = "<group>"; };
+		AED96A6F1AEA819900D1AA53 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		AED96A711AEA8E4D00D1AA53 /* Creating clickable URLS in UITextField that open in your app.MD */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Creating clickable URLS in UITextField that open in your app.MD"; sourceTree = SOURCE_ROOT; };
 		AEFC22781AE74B2C00ED02AA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -89,6 +92,7 @@
 				AECB52351ADFD46F00AC9E00 /* Images.xcassets */,
 				AECB52371ADFD46F00AC9E00 /* LaunchScreen.xib */,
 				AECB522C1ADFD46F00AC9E00 /* Supporting Files */,
+				AED96A6F1AEA819900D1AA53 /* Types.swift */,
 			);
 			path = DatesInSwift;
 			sourceTree = "<group>";
@@ -98,6 +102,7 @@
 			children = (
 				AED96A6C1AE9956F00D1AA53 /* Dates.data */,
 				AEFC22781AE74B2C00ED02AA /* README.md */,
+				AED96A711AEA8E4D00D1AA53 /* Creating clickable URLS in UITextField that open in your app.MD */,
 				AECB522D1ADFD46F00AC9E00 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -224,6 +229,7 @@
 				AECB52311ADFD46F00AC9E00 /* ViewController.swift in Sources */,
 				AECB522F1ADFD46F00AC9E00 /* AppDelegate.swift in Sources */,
 				AECB524F1ADFD55300AC9E00 /* DateExtensions.swift in Sources */,
+				AED96A701AEA819900D1AA53 /* Types.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

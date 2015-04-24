@@ -66,16 +66,17 @@ class ViewController: UIViewController
   {
     let notificationCenter = NSNotificationCenter.defaultCenter()
 
-    selectDateObsever = notificationCenter.addObserverForName("selectDate",
+    selectDateObsever = notificationCenter.addObserverForName(
+      WTNotifications.selectDate,
       object: nil,
       queue: nil,
       usingBlock:
       {
         (note: NSNotification!) -> Void in
         if let userInfo = note.userInfo,
-          year = userInfo["year"] as? Int,
-          month = userInfo["month"] as? Int,
-          day = userInfo["day"] as? Int
+          year = userInfo[SelectNoticeKeys.year] as? Int,
+          month = userInfo[SelectNoticeKeys.month] as? Int,
+          day = userInfo[SelectNoticeKeys.day] as? Int
         {
           let mdy = mdyTuple(month: month, day: day, year: year)
           if let dateFromURL = date(mdy: mdy)
