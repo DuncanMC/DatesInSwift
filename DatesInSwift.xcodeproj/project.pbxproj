@@ -42,6 +42,7 @@
 		AECB524E1ADFD55300AC9E00 /* DateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtensions.swift; sourceTree = "<group>"; };
 		AED96A6C1AE9956F00D1AA53 /* Dates.data */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = Dates.data; sourceTree = "<group>"; };
 		AED96A6F1AEA819900D1AA53 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		AED96A731AEA927100D1AA53 /* Creating clickable URLS in UITextField that open in your app.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Creating clickable URLS in UITextField that open in your app.md"; sourceTree = SOURCE_ROOT; };
 		AEFC22781AE74B2C00ED02AA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -101,6 +102,7 @@
 			children = (
 				AED96A6C1AE9956F00D1AA53 /* Dates.data */,
 				AEFC22781AE74B2C00ED02AA /* README.md */,
+				AED96A731AEA927100D1AA53 /* Creating clickable URLS in UITextField that open in your app.md */,
 				AECB522D1ADFD46F00AC9E00 /* Info.plist */,
 			);
 			name = "Supporting Files";
