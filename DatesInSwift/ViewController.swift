@@ -77,29 +77,29 @@ class ViewController: UIViewController
           month = userInfo["month"] as? Int,
           day = userInfo["day"] as? Int
         {
-        println("User selected date (\(month)/\(day)/\(year))")
           let mdy = mdyTuple(month: month, day: day, year: year)
           if let dateFromURL = date(mdy: mdy)
           {
             self.datePicker.date = dateFromURL
+            self.handleOkButton(self)
           }
         }
     }
     )
   }
-  
+
+  //-------------------------------------------------------------------------------------------------------
+  // MARK: - Init method -
+  //-------------------------------------------------------------------------------------------------------
+
 required  init(coder: NSCoder)
   {
     super.init(coder: coder)
-    setupObservers()
+    setupObservers()  //register for notifications to move the picker to a new date.
   }
   //-------------------------------------------------------------------------------------------------------
   // MARK: - UIViewController methods -
   //-------------------------------------------------------------------------------------------------------
-  override func viewDidAppear(animated: Bool)
-  {
-    println("IN \(__FUNCTION__)")
-  }
   override func viewDidLoad()
   {
     super.viewDidLoad()
@@ -113,11 +113,8 @@ required  init(coder: NSCoder)
       let datesPath = NSBundle.mainBundle().pathForResource("Dates", ofType: "data"),
       let datesString = NSKeyedUnarchiver.unarchiveObjectWithFile(datesPath) as? NSAttributedString
     {
-      println("Read data")
       datesField.attributedText = datesString
     }
-    
-
   }
   
   override func didReceiveMemoryWarning()

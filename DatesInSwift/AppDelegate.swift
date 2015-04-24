@@ -41,44 +41,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
   }
 
-  func applicationDidEnterBackground(application: UIApplication) {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-  }
-
-  func applicationWillEnterForeground(application: UIApplication) {
-    // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
-  }
-
-  func applicationDidBecomeActive(application: UIApplication) {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-  }
-
-  func applicationWillTerminate(application: UIApplication) {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-  }
 
   /*
   This app supports the custom URL scheme `WTDateLink://`. A typical URL is of the form:
   WTDateLink://?date=04_03_1973 or WTDateLink://?date=today.
   
-  If we can
+  If we can parse a valid date, we broadcast a notification with the components of the date. 
+  The app's view controller registers for that notification and uses it to switch the picker to the date.
+  
+  The app's view controller presents a UITextView that loads the encoded content of an RTF file including links using the WTDateLink:// prefix. Tapping one of those links triggers this method, which sends a notifcation to the view controller.
   */
   func application(application: UIApplication,
     openURL url: NSURL,
     sourceApplication: String?,
     annotation: AnyObject?) -> Bool
   {
-    println("opening URL \(url)")
+    //An URL's "query" is everthing after the "?" (should be the "date=..." bit for our URLs)
     if let theQuery = url.query
     {
-      let theQueryNSString = theQuery as NSString
-      let range: NSRange = theQueryNSString.rangeOfString("date=")
-      if range.location != NSNotFound
+      let theQueryNSString = theQuery //as NSString
+      let range = theQueryNSString.rangeOfString("date=")
+      if range != nil
       {
-        let start = range.location + range.length
-        let range = NSRange(location: start, length: theQueryNSString.length - start)
-        let dateString = theQueryNSString.substringWithRange(range)
+        let dateString = theQueryNSString.substringFromIndex(range!.endIndex)
         var infoDictionary: [String: Int]?
         if dateString == "today"
         {
