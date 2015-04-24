@@ -58,6 +58,57 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
 
-
+  /*
+  This app supports the custom URL scheme `WTDateLink://`. A typical URL is of the form:
+  WTDateLink://?date=04_03_1973 or WTDateLink://?date=today.
+  
+  If we can
+  */
+  func application(application: UIApplication,
+    openURL url: NSURL,
+    sourceApplication: String?,
+    annotation: AnyObject?) -> Bool
+  {
+    println("opening URL \(url)")
+    if let theQuery = url.query
+    {
+      let theQueryNSString = theQuery as NSString
+      let range: NSRange = theQueryNSString.rangeOfString("date=")
+      if range.location != NSNotFound
+      {
+        let start = range.location + range.length
+        let range = NSRange(location: start, length: theQueryNSString.length - start)
+        let dateString = theQueryNSString.substringWithRange(range)
+        var infoDictionary: [String: Int]?
+        if dateString == "today"
+        {
+          let todayMDY = NSDate().mdy()
+          infoDictionary = ["month": todayMDY.month,
+            "day": todayMDY.day,
+            "year": todayMDY.year];
+        }
+        else
+        {
+          let components = dateString.componentsSeparatedByString("_")
+          if components.count == 3
+          {
+            if let month = (components[0] as String).toInt(),
+              day = (components[1] as String).toInt(),
+              year = (components[2] as String).toInt()
+            {
+              
+              infoDictionary = ["month": month, "day": day, "year": year]
+            }
+          }
+        }
+        if let infoDictionary = infoDictionary
+        {
+          NSNotificationCenter.defaultCenter().postNotificationName("selectDate",
+            object: nil, userInfo: infoDictionary  as [NSObject : AnyObject])
+        }
+      }
+    }
+    return true
+  }
 }
 

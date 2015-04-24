@@ -12,7 +12,9 @@ import UIKit
 
 
 
-//-------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------
+// MARK: - Global functions -
+//-------------------------------------------------------------------------------------------------------
 
 func date(#mdy: mdyTuple) ->NSDate?
 {
@@ -48,19 +50,14 @@ func daysBetweenDates(#startDate: NSDate, #endDate: NSDate) -> Int
 
 
 //-------------------------------------------------------------
+// MARK: Function to allow matching mdy tuple constants in switch statements
 
-/**
-  This function makes it possible to use mdyTuple constants or variables in the cases
-  of switch statements.
-*/
 func ~=(a: mdyTuple, b: mdyTuple) -> Bool {
   return a.month ~= b.month && a.year ~= b.year && a.day ~= b.day
 }
 
 //-------------------------------------------------------------
-/**
-  This function makes it possible to compar mdyTuple objects using ==
-*/
+// MARK: This function makes it possible to compare mdyTuple objects using ==
 
 public func ==(lhs: mdyTuple, rhs: mdyTuple) -> Bool
 {
@@ -69,7 +66,9 @@ public func ==(lhs: mdyTuple, rhs: mdyTuple) -> Bool
   lhs.year == rhs.year
 }
 
-//-------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------
+// MARK: - NSDate Equatable and Comparable extensions -
+//-------------------------------------------------------------------------------------------------------
 //Tell the system that NSDates can be compared with ==, >, >=, <, and <= operators
 
 extension NSDate: Equatable {}
@@ -101,7 +100,10 @@ public func >=(lhs: NSDate, rhs: NSDate) -> Bool
 {
   return lhs.timeIntervalSince1970 >= rhs.timeIntervalSince1970
 }
-//-------------------------------------------------------------
+
+//-------------------------------------------------------------------------------------------------------
+// MARK: - other NSDate extensions -
+//-------------------------------------------------------------------------------------------------------
 
 extension NSDate
 {
@@ -141,12 +143,10 @@ extension NSDate
   }
 }
 
-//-------------------------------------------------------------
+//-------------------------------------------------------------------------------------------------------
+// MARK: - DateUtils class -
+//-------------------------------------------------------------------------------------------------------
 
-extension NSCalendar
-{
-}
-//-------------------------------------------------------------
 //
 /**
   :class:   DateUtils

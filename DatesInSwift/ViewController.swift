@@ -8,6 +8,17 @@
 
 import UIKit
 
+//-------------------------------------------------------------------------------------------------------
+// MARK: - Global functions -
+//-------------------------------------------------------------------------------------------------------
+/**
+  This function returns a possessive form for a number,
+  e.g. 1st for 1 or 3rd for 3.description
+
+  :param: aNumber: Int - the number to convert.
+
+  :returns: a string containing the possessive form
+*/
 func possessiveNumber(aNumber: Int) -> String
 {
   let suffix: String
@@ -26,8 +37,23 @@ func possessiveNumber(aNumber: Int) -> String
   }
   return "\(aNumber)\(suffix)"
 }
+
+//-------------------------------------------------------------------------------------------------------
+// MARK: - ViewController class  -
+//-------------------------------------------------------------------------------------------------------
 class ViewController: UIViewController
 {
+  var selectDateObsever: NSObjectProtocol?
+  //-------------------------------------------------------------
+  // - MARK: - IBOutlets
+  //-------------------------------------------------------------
+  @IBOutlet weak var messageLabel: UILabel!
+  @IBOutlet weak var datePicker: UIDatePicker!
+  
+  @IBOutlet weak var datesField: UITextView!
+  //-------------------------------------------------------------
+  // - MARK: - Instance variables
+  //-------------------------------------------------------------
   var message: String = ""
     {
     didSet
@@ -35,16 +61,63 @@ class ViewController: UIViewController
       messageLabel.text = message
     }
   }
-  @IBOutlet weak var messageLabel: UILabel!
-  @IBOutlet weak var datePicker: UIDatePicker!
   
+  func setupObservers()
+  {
+    let notificationCenter = NSNotificationCenter.defaultCenter()
+
+    selectDateObsever = notificationCenter.addObserverForName("selectDate",
+      object: nil,
+      queue: nil,
+      usingBlock:
+      {
+        (note: NSNotification!) -> Void in
+        if let userInfo = note.userInfo,
+          year = userInfo["year"] as? Int,
+          month = userInfo["month"] as? Int,
+          day = userInfo["day"] as? Int
+        {
+        println("User selected date (\(month)/\(day)/\(year))")
+          let mdy = mdyTuple(month: month, day: day, year: year)
+          if let dateFromURL = date(mdy: mdy)
+          {
+            self.datePicker.date = dateFromURL
+          }
+        }
+    }
+    )
+  }
+  
+required  init(coder: NSCoder)
+  {
+    super.init(coder: coder)
+    setupObservers()
+  }
+  //-------------------------------------------------------------------------------------------------------
+  // MARK: - UIViewController methods -
+  //-------------------------------------------------------------------------------------------------------
   override func viewDidAppear(animated: Bool)
   {
     println("IN \(__FUNCTION__)")
   }
-  override func viewDidLoad() {
+  override func viewDidLoad()
+  {
     super.viewDidLoad()
-    // Do any additional setup after loading the view, typically from a nib.
+    
+    /*
+    If we can load a file called "Dates.data" from the bundle and convert it to an attributed string,
+    install it in the dates field. The contents contain clickable links with custom URLS to select
+    each date.
+    */
+    if
+      let datesPath = NSBundle.mainBundle().pathForResource("Dates", ofType: "data"),
+      let datesString = NSKeyedUnarchiver.unarchiveObjectWithFile(datesPath) as? NSAttributedString
+    {
+      println("Read data")
+      datesField.attributedText = datesString
+    }
+    
+
   }
   
   override func didReceiveMemoryWarning()
@@ -54,19 +127,24 @@ class ViewController: UIViewController
   }
   
   
+  //-------------------------------------------------------------------------------------------------------
+  // MARK: - IBAction methods -
+  //-------------------------------------------------------------------------------------------------------
+  
   @IBAction func pickerValueChanged(sender: AnyObject)
   {
     message = ""
   }
   
-  let bobsBirthday =    (month: 11, day: 30, year: 1961)
-  let janesBirthday =   (month: 10, day: 14, year: 1987)
-  let fredsBirthday =   (month: 4, day: 3, year: 1973)
-  let patsBirthday =    (month: 7, day: 7, year: 1931)
-  let susansBirthday =  (month: 3, day: 8, year: 1933)
-  
   @IBAction func handleOkButton(sender: AnyObject)
   {
+
+    let bobsBirthday =    (month: 11, day: 30, year: 1961)
+    let janesBirthday =   (month: 10, day: 14, year: 1987)
+    let fredsBirthday =   (month: 4, day: 3, year: 1973)
+    let patsBirthday =    (month: 7, day: 7, year: 1931)
+    let susansBirthday =  (month: 3, day: 8, year: 1933)
+    
     //Prefix will be used to build date sentences.
     //Is the user-selected date in the past, present, or future?
     let prefix: String
@@ -154,6 +232,13 @@ class ViewController: UIViewController
     default:
       message = "The selected date \(prefix) \(date)"
     }
+  }
+  
+  func textView(textView: UITextView,
+    shouldInteractWithURL URL: NSURL,
+    inRange characterRange: NSRange) -> Bool
+  {
+    return true
   }
 }
 

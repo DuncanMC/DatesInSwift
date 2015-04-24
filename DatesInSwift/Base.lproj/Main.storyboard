@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -59,53 +59,39 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SYI-kX-DDF">
-                                <rect key="frame" x="5" y="328" width="310" height="125"/>
-                                <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">Birthdays:	
-11/30/1961	10/14/1987	
-04/03/1973	07/07/1931	
-03/08/1933
-Other dates:	
-Today, April, May, February</string>
-                                        <attributes>
-                                            <font key="NSFont" size="18" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="36"/>
-                                                    <textTab alignment="left" location="72"/>
-                                                    <textTab alignment="left" location="108"/>
-                                                    <textTab alignment="left" location="144"/>
-                                                    <textTab alignment="left" location="180"/>
-                                                    <textTab alignment="left" location="216"/>
-                                                    <textTab alignment="left" location="252"/>
-                                                    <textTab alignment="left" location="288"/>
-                                                    <textTab alignment="left" location="324"/>
-                                                    <textTab alignment="left" location="360"/>
-                                                    <textTab alignment="left" location="396"/>
-                                                    <textTab alignment="left" location="432"/>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                </attributedString>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7sF-5d-hFb" userLabel="VSpacer1">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7sF-5d-hFb" userLabel="VSpacer1">
                                 <rect key="frame" x="0.0" y="300" width="320" height="28"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="ihc-lh-UOf"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EY6-jZ-8FQ" userLabel="VSpacer2">
+                            <view contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="EY6-jZ-8FQ" userLabel="VSpacer2">
                                 <rect key="frame" x="0.0" y="453" width="320" height="27"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="6kZ-EJ-5T3"/>
                                 </constraints>
                             </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Nd2-sm-HwN">
+                                <rect key="frame" x="5" y="300" width="310" height="180"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="170" id="oON-8v-rp5"/>
+                                </constraints>
+                                <string key="text">Birthdays:	
+11/30/1961	10/14/1987
+04/03/1973	07/07/1931	
+03/08/1933
+Other dates:	
+Today, April, May, February</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="9tl-GR-me3"/>
+                                </connections>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -113,27 +99,25 @@ Today, April, May, February</string>
                             <constraint firstItem="cn7-a0-nP5" firstAttribute="top" secondItem="WWY-1h-VzS" secondAttribute="bottom" constant="60" id="1qj-Ww-eFy"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0z3-Ag-U3N" secondAttribute="trailing" id="2ia-TC-h5A"/>
                             <constraint firstItem="0z3-Ag-U3N" firstAttribute="top" secondItem="WWY-1h-VzS" secondAttribute="bottom" constant="10" id="516-AQ-5sN"/>
-                            <constraint firstItem="EY6-jZ-8FQ" firstAttribute="top" secondItem="SYI-kX-DDF" secondAttribute="bottom" id="66v-Sx-POe"/>
+                            <constraint firstAttribute="trailing" secondItem="Nd2-sm-HwN" secondAttribute="trailing" constant="5" id="6Ue-vC-lDO"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="EY6-jZ-8FQ" secondAttribute="bottom" id="7gF-3I-aC4"/>
                             <constraint firstAttribute="centerX" secondItem="cn7-a0-nP5" secondAttribute="centerX" id="AZ6-au-o1a"/>
-                            <constraint firstItem="SYI-kX-DDF" firstAttribute="top" secondItem="7sF-5d-hFb" secondAttribute="bottom" id="E75-Io-zxh"/>
                             <constraint firstItem="0z3-Ag-U3N" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="10" id="J1m-4U-QlU"/>
                             <constraint firstItem="05e-2K-TUH" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="JLD-dk-gTx"/>
-                            <constraint firstAttribute="trailing" secondItem="SYI-kX-DDF" secondAttribute="trailing" constant="5" id="LLI-ET-ii0"/>
                             <constraint firstItem="cn7-a0-nP5" firstAttribute="top" secondItem="0z3-Ag-U3N" secondAttribute="bottom" constant="2" id="QGj-YE-LDy"/>
+                            <constraint firstItem="Nd2-sm-HwN" firstAttribute="top" secondItem="7sF-5d-hFb" secondAttribute="bottom" id="S39-Hz-5DJ"/>
                             <constraint firstItem="7sF-5d-hFb" firstAttribute="top" secondItem="cn7-a0-nP5" secondAttribute="bottom" id="TOA-rS-7TP"/>
+                            <constraint firstItem="EY6-jZ-8FQ" firstAttribute="top" secondItem="Nd2-sm-HwN" secondAttribute="bottom" id="YIG-fI-m6L"/>
                             <constraint firstItem="WWY-1h-VzS" firstAttribute="top" secondItem="05e-2K-TUH" secondAttribute="bottom" constant="2" id="ZYf-MA-jqo"/>
+                            <constraint firstItem="Nd2-sm-HwN" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="bOP-sV-clp"/>
                             <constraint firstAttribute="centerX" secondItem="7sF-5d-hFb" secondAttribute="centerX" id="dHM-Fo-bBS"/>
                             <constraint firstAttribute="centerX" secondItem="EY6-jZ-8FQ" secondAttribute="centerX" id="gcy-DF-Qge"/>
                             <constraint firstItem="WWY-1h-VzS" firstAttribute="centerX" secondItem="05e-2K-TUH" secondAttribute="centerX" id="iHT-DY-VQT"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0z3-Ag-U3N" secondAttribute="bottom" constant="10" id="mZu-Ki-ga6"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="0z3-Ag-U3N" secondAttribute="bottom" constant="10" id="o1O-6y-Y9h"/>
                             <constraint firstAttribute="centerX" secondItem="05e-2K-TUH" secondAttribute="centerX" id="oYP-lM-MeP"/>
-                            <constraint firstItem="SYI-kX-DDF" firstAttribute="top" relation="greaterThanOrEqual" secondItem="cn7-a0-nP5" secondAttribute="bottom" constant="2" id="qvK-nR-DWT"/>
                             <constraint firstAttribute="trailing" secondItem="0z3-Ag-U3N" secondAttribute="trailing" constant="10" id="s3O-cc-XQg"/>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="SYI-kX-DDF" secondAttribute="bottom" constant="2" id="vXw-Ji-bbo"/>
                             <constraint firstItem="EY6-jZ-8FQ" firstAttribute="height" secondItem="7sF-5d-hFb" secondAttribute="height" id="vaB-BR-QV9"/>
-                            <constraint firstItem="SYI-kX-DDF" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="5" id="zEf-FB-2lp"/>
                             <constraint firstItem="0z3-Ag-U3N" firstAttribute="top" secondItem="WWY-1h-VzS" secondAttribute="bottom" constant="2" id="zaE-gJ-Xfy"/>
                         </constraints>
                         <variation key="default">
@@ -141,8 +125,6 @@ Today, April, May, February</string>
                                 <exclude reference="14i-dv-BmJ"/>
                                 <exclude reference="2ia-TC-h5A"/>
                                 <exclude reference="516-AQ-5sN"/>
-                                <exclude reference="qvK-nR-DWT"/>
-                                <exclude reference="vXw-Ji-bbo"/>
                                 <exclude reference="1qj-Ww-eFy"/>
                                 <exclude reference="mZu-Ki-ga6"/>
                                 <exclude reference="o1O-6y-Y9h"/>
@@ -152,6 +134,7 @@ Today, April, May, February</string>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
                     <connections>
                         <outlet property="datePicker" destination="WWY-1h-VzS" id="D2m-w3-NIR"/>
+                        <outlet property="datesField" destination="Nd2-sm-HwN" id="dVk-En-4je"/>
                         <outlet property="messageLabel" destination="0z3-Ag-U3N" id="Q7a-8C-nid"/>
                     </connections>
                 </viewController>
