@@ -54,7 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   func application(application: UIApplication,
     openURL url: NSURL,
     sourceApplication: String?,
-    annotation: AnyObject?) -> Bool
+    annotation: AnyObject) -> Bool
   {
     var infoDictionary: [NSObject : AnyObject]?
     
@@ -81,9 +81,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let components = dateString.componentsSeparatedByString("_")
         if components.count == 3
         {
-          if let month = (components[0] as String).toInt(),
-            day = (components[1] as String).toInt(),
-            year = (components[2] as String).toInt()
+          if let month = Int((components[0] as String)),
+            day = Int((components[1] as String)),
+            year = Int((components[2] as String))
           {
             if month != 0 && day != 0 && year != 0
             {

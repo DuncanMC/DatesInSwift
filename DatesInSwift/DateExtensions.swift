@@ -16,7 +16,7 @@ import UIKit
 // MARK: - Global functions -
 //-------------------------------------------------------------------------------------------------------
 
-func date(#mdy: mdyTuple) ->NSDate?
+func date(mdy mdy: mdyTuple) ->NSDate?
 {
 
   let components = NSDateComponents()
@@ -37,13 +37,13 @@ It is designed for use with the Gregorian calendar.
 This function only works for days that are in the same era.
 (both dates are AD or both dates are BC)
 
-:param: startDate: NSDate - the starting date
-:param: endDate: NSDate - the ending date
+- parameter startDate:: NSDate - the starting date
+- parameter endDate:: NSDate - the ending date
 
-:returns: endDate.dayNumber - startDate.dayNumber
+- returns: endDate.dayNumber - startDate.dayNumber
 */
 
-func daysBetweenDates(#startDate: NSDate, #endDate: NSDate) -> Int
+func daysBetweenDates(startDate startDate: NSDate, endDate: NSDate) -> Int
 {
   return endDate.dayNumber() - startDate.dayNumber()
 }
@@ -71,7 +71,7 @@ public func ==(lhs: mdyTuple, rhs: mdyTuple) -> Bool
 //-------------------------------------------------------------------------------------------------------
 //Tell the system that NSDates can be compared with ==, >, >=, <, and <= operators
 
-extension NSDate: Equatable {}
+//extension NSDate: Equatable {}
 extension NSDate: Comparable {}
 
 //-------------------------------------------------------------
@@ -111,7 +111,7 @@ extension NSDate
   This function returns a tuple containing the month, 
   day and year of the receiver
   
-  :returns: typealias mdyTuple = (month: Int, day: Int, year: Int)
+  - returns: typealias mdyTuple = (month: Int, day: Int, year: Int)
 */
   
   func mdy() -> mdyTuple
@@ -120,9 +120,7 @@ extension NSDate
     
     //get the month/day/year componentsfor today's date.
     let date_components = calendar.components(
-      NSCalendarUnit.CalendarUnitYear |
-        NSCalendarUnit.CalendarUnitMonth |
-        NSCalendarUnit.CalendarUnitDay,
+      [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day],
       fromDate: self)
 
     return (date_components.month, date_components.day, date_components.year)
@@ -132,14 +130,14 @@ extension NSDate
   This function calcuates an ordinal day number for the receiver 
   using the Gregorian calendar.
   
-  :returns: an integer day number
+  - returns: an integer day number
   */
   
   func dayNumber() -> Int
   {
     let calendar = DateUtils.gregorianCalendar
-    return calendar.ordinalityOfUnit(NSCalendarUnit.CalendarUnitDay,
-      inUnit: NSCalendarUnit.CalendarUnitEra, forDate: self)
+    return calendar.ordinalityOfUnit(NSCalendarUnit.Day,
+      inUnit: NSCalendarUnit.Era, forDate: self)
   }
 }
 

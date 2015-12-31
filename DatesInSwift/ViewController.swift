@@ -15,9 +15,9 @@ import UIKit
   This function returns a possessive form for a number,
   e.g. 1st for 1 or 3rd for 3.description
 
-  :param: aNumber: Int - the number to convert.
+  - parameter aNumber:: Int - the number to convert.
 
-  :returns: a string containing the possessive form
+  - returns: a string containing the possessive form
 */
 func possessiveNumber(aNumber: Int) -> String
 {
@@ -78,7 +78,7 @@ class ViewController: UIViewController
       queue: nil,
       usingBlock:
       {
-        (note: NSNotification!) -> Void in
+        (note: NSNotification) -> Void in
         if let userInfo = note.userInfo,
           year = userInfo[SelectNoticeKeys.year] as? Int,
           month = userInfo[SelectNoticeKeys.month] as? Int,
@@ -99,7 +99,7 @@ class ViewController: UIViewController
   // MARK: - Init method -
   //-------------------------------------------------------------------------------------------------------
 
-required  init(coder: NSCoder)
+required  init?(coder: NSCoder)
   {
     super.init(coder: coder)
     setupObservers()  //register for notifications to move the picker to a new date.
