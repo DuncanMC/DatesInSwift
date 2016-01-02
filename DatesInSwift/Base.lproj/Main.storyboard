@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1021" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -29,7 +30,7 @@
                                     <action selector="pickerValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="BoQ-ft-NOj"/>
                                 </connections>
                             </datePicker>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pick a date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05e-2K-TUH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pick a date" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="05e-2K-TUH">
                                 <rect key="frame" x="117" y="20" width="86" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -67,7 +68,7 @@
                                     </mask>
                                 </variation>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nd2-sm-HwN">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nd2-sm-HwN" customClass="RTF_UITextView" customModule="DatesInSwift" customModuleProvider="target">
                                 <rect key="frame" x="5" y="305" width="310" height="170"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -76,287 +77,8 @@
                                 </constraints>
                                 <attributedString key="attributedText">
                                     <fragment>
-                                        <string key="content">Birthdays:	
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="20" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="36"/>
-                                                    <textTab alignment="left" location="72"/>
-                                                    <textTab alignment="left" location="108"/>
-                                                    <textTab alignment="left" location="144"/>
-                                                    <textTab alignment="left" location="180"/>
-                                                    <textTab alignment="left" location="216"/>
-                                                    <textTab alignment="left" location="252"/>
-                                                    <textTab alignment="left" location="288"/>
-                                                    <textTab alignment="left" location="324"/>
-                                                    <textTab alignment="left" location="360"/>
-                                                    <textTab alignment="left" location="396"/>
-                                                    <textTab alignment="left" location="432"/>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="11/30/1961">
-                                        <attributes>
-                                            <font key="NSFont" size="20" name="Helvetica"/>
-                                            <url key="NSLink" string="WTDateLink://?date=11_30_1961"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="36"/>
-                                                    <textTab alignment="left" location="72"/>
-                                                    <textTab alignment="left" location="108"/>
-                                                    <textTab alignment="left" location="144"/>
-                                                    <textTab alignment="left" location="180"/>
-                                                    <textTab alignment="left" location="216"/>
-                                                    <textTab alignment="left" location="252"/>
-                                                    <textTab alignment="left" location="288"/>
-                                                    <textTab alignment="left" location="324"/>
-                                                    <textTab alignment="left" location="360"/>
-                                                    <textTab alignment="left" location="396"/>
-                                                    <textTab alignment="left" location="432"/>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                            <integer key="NSUnderline" value="1"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-CSAJA
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="20" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="36"/>
-                                                    <textTab alignment="left" location="72"/>
-                                                    <textTab alignment="left" location="108"/>
-                                                    <textTab alignment="left" location="144"/>
-                                                    <textTab alignment="left" location="180"/>
-                                                    <textTab alignment="left" location="216"/>
-                                                    <textTab alignment="left" location="252"/>
-                                                    <textTab alignment="left" location="288"/>
-                                                    <textTab alignment="left" location="324"/>
-                                                    <textTab alignment="left" location="360"/>
-                                                    <textTab alignment="left" location="396"/>
-                                                    <textTab alignment="left" location="432"/>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="10/14/1987">
-                                        <attributes>
-                                            <font key="NSFont" size="20" name="Helvetica"/>
-                                            <url key="NSLink" string="WTDateLink://?date=10_14_1987"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="36"/>
-                                                    <textTab alignment="left" location="72"/>
-                                                    <textTab alignment="left" location="108"/>
-                                                    <textTab alignment="left" location="144"/>
-                                                    <textTab alignment="left" location="180"/>
-                                                    <textTab alignment="left" location="216"/>
-                                                    <textTab alignment="left" location="252"/>
-                                                    <textTab alignment="left" location="288"/>
-                                                    <textTab alignment="left" location="324"/>
-                                                    <textTab alignment="left" location="360"/>
-                                                    <textTab alignment="left" location="396"/>
-                                                    <textTab alignment="left" location="432"/>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                            <integer key="NSUnderline" value="1"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
                                         <string key="content" base64-UTF8="YES">
 Cg
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="20" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="36"/>
-                                                    <textTab alignment="left" location="72"/>
-                                                    <textTab alignment="left" location="108"/>
-                                                    <textTab alignment="left" location="144"/>
-                                                    <textTab alignment="left" location="180"/>
-                                                    <textTab alignment="left" location="216"/>
-                                                    <textTab alignment="left" location="252"/>
-                                                    <textTab alignment="left" location="288"/>
-                                                    <textTab alignment="left" location="324"/>
-                                                    <textTab alignment="left" location="360"/>
-                                                    <textTab alignment="left" location="396"/>
-                                                    <textTab alignment="left" location="432"/>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="04/03/1973">
-                                        <attributes>
-                                            <font key="NSFont" size="20" name="Helvetica"/>
-                                            <url key="NSLink" string="WTDateLink://?date=04_03_1973"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="36"/>
-                                                    <textTab alignment="left" location="72"/>
-                                                    <textTab alignment="left" location="108"/>
-                                                    <textTab alignment="left" location="144"/>
-                                                    <textTab alignment="left" location="180"/>
-                                                    <textTab alignment="left" location="216"/>
-                                                    <textTab alignment="left" location="252"/>
-                                                    <textTab alignment="left" location="288"/>
-                                                    <textTab alignment="left" location="324"/>
-                                                    <textTab alignment="left" location="360"/>
-                                                    <textTab alignment="left" location="396"/>
-                                                    <textTab alignment="left" location="432"/>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                            <integer key="NSUnderline" value="1"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-CQk
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="20" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="36"/>
-                                                    <textTab alignment="left" location="72"/>
-                                                    <textTab alignment="left" location="108"/>
-                                                    <textTab alignment="left" location="144"/>
-                                                    <textTab alignment="left" location="180"/>
-                                                    <textTab alignment="left" location="216"/>
-                                                    <textTab alignment="left" location="252"/>
-                                                    <textTab alignment="left" location="288"/>
-                                                    <textTab alignment="left" location="324"/>
-                                                    <textTab alignment="left" location="360"/>
-                                                    <textTab alignment="left" location="396"/>
-                                                    <textTab alignment="left" location="432"/>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="07/07/1931">
-                                        <attributes>
-                                            <font key="NSFont" size="20" name="Helvetica"/>
-                                            <url key="NSLink" string="WTDateLink://?date=07_07_1931"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="36"/>
-                                                    <textTab alignment="left" location="72"/>
-                                                    <textTab alignment="left" location="108"/>
-                                                    <textTab alignment="left" location="144"/>
-                                                    <textTab alignment="left" location="180"/>
-                                                    <textTab alignment="left" location="216"/>
-                                                    <textTab alignment="left" location="252"/>
-                                                    <textTab alignment="left" location="288"/>
-                                                    <textTab alignment="left" location="324"/>
-                                                    <textTab alignment="left" location="360"/>
-                                                    <textTab alignment="left" location="396"/>
-                                                    <textTab alignment="left" location="432"/>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                            <integer key="NSUnderline" value="1"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-CQo
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="20" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="36"/>
-                                                    <textTab alignment="left" location="72"/>
-                                                    <textTab alignment="left" location="108"/>
-                                                    <textTab alignment="left" location="144"/>
-                                                    <textTab alignment="left" location="180"/>
-                                                    <textTab alignment="left" location="216"/>
-                                                    <textTab alignment="left" location="252"/>
-                                                    <textTab alignment="left" location="288"/>
-                                                    <textTab alignment="left" location="324"/>
-                                                    <textTab alignment="left" location="360"/>
-                                                    <textTab alignment="left" location="396"/>
-                                                    <textTab alignment="left" location="432"/>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="03/08/1933">
-                                        <attributes>
-                                            <font key="NSFont" size="20" name="Helvetica"/>
-                                            <url key="NSLink" string="WTDateLink://?date=03_08_1933"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="36"/>
-                                                    <textTab alignment="left" location="72"/>
-                                                    <textTab alignment="left" location="108"/>
-                                                    <textTab alignment="left" location="144"/>
-                                                    <textTab alignment="left" location="180"/>
-                                                    <textTab alignment="left" location="216"/>
-                                                    <textTab alignment="left" location="252"/>
-                                                    <textTab alignment="left" location="288"/>
-                                                    <textTab alignment="left" location="324"/>
-                                                    <textTab alignment="left" location="360"/>
-                                                    <textTab alignment="left" location="396"/>
-                                                    <textTab alignment="left" location="432"/>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                            <integer key="NSUnderline" value="1"/>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">
-Other dates:	
-</string>
-                                        <attributes>
-                                            <font key="NSFont" size="20" name="Helvetica"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="36"/>
-                                                    <textTab alignment="left" location="72"/>
-                                                    <textTab alignment="left" location="108"/>
-                                                    <textTab alignment="left" location="144"/>
-                                                    <textTab alignment="left" location="180"/>
-                                                    <textTab alignment="left" location="216"/>
-                                                    <textTab alignment="left" location="252"/>
-                                                    <textTab alignment="left" location="288"/>
-                                                    <textTab alignment="left" location="324"/>
-                                                    <textTab alignment="left" location="360"/>
-                                                    <textTab alignment="left" location="396"/>
-                                                    <textTab alignment="left" location="432"/>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment content="Today">
-                                        <attributes>
-                                            <font key="NSFont" size="20" name="Helvetica"/>
-                                            <url key="NSLink" string="WTDateLink://?date=today"/>
-                                            <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural">
-                                                <tabStops>
-                                                    <textTab alignment="left" location="36"/>
-                                                    <textTab alignment="left" location="72"/>
-                                                    <textTab alignment="left" location="108"/>
-                                                    <textTab alignment="left" location="144"/>
-                                                    <textTab alignment="left" location="180"/>
-                                                    <textTab alignment="left" location="216"/>
-                                                    <textTab alignment="left" location="252"/>
-                                                    <textTab alignment="left" location="288"/>
-                                                    <textTab alignment="left" location="324"/>
-                                                    <textTab alignment="left" location="360"/>
-                                                    <textTab alignment="left" location="396"/>
-                                                    <textTab alignment="left" location="432"/>
-                                                </tabStops>
-                                            </paragraphStyle>
-                                        </attributes>
-                                    </fragment>
-                                    <fragment>
-                                        <string key="content">, April, May, February
 </string>
                                         <attributes>
                                             <font key="NSFont" size="20" name="Helvetica"/>
@@ -388,6 +110,7 @@ Other dates:
                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                         <color key="value" white="0.5" alpha="0.5" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="RTF_Filename" value="Dates"/>
                                 </userDefinedRuntimeAttributes>
                                 <variation key="default">
                                     <mask key="constraints">

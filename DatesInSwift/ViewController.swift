@@ -116,12 +116,12 @@ required  init?(coder: NSCoder)
     install it in the dates field. The contents contain clickable links with custom URLS to select
     each date.
     */
-    if
-      let datesPath = NSBundle.mainBundle().pathForResource("Dates", ofType: "data"),
-      let datesString = NSKeyedUnarchiver.unarchiveObjectWithFile(datesPath) as? NSAttributedString
-    {
-      datesField.attributedText = datesString
-    }
+//    if
+//      let datesPath = NSBundle.mainBundle().pathForResource("Dates", ofType: "data"),
+//      let datesString = NSKeyedUnarchiver.unarchiveObjectWithFile(datesPath) as? NSAttributedString
+//    {
+//      datesField.attributedText = datesString
+//    }
   }
   
   override func didReceiveMemoryWarning()
