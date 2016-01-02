@@ -8,33 +8,45 @@
 
 import UIKit
 
-@IBDesignable
-class RTF_UITextView: UITextView
-{
-  @IBInspectable
-  var RTF_Filename: String = ""
-  {
-    didSet(newValue)
+    @IBDesignable
+    class RTF_UITextView: UITextView
     {
-      print("filename = \(RTF_Filename)")
-      if let fileURL = NSBundle.mainBundle().URLForResource(RTF_Filename, withExtension: "rtf"),
-      let theData = NSData(contentsOfURL: fileURL)
-      {
-        var aString:NSAttributedString
-        do {
-          try
-          aString = NSAttributedString(data: theData,
-            options: [:],
-            documentAttributes:  nil
-          )
-          self.attributedText = aString;
-        }
-        catch
+      @IBInspectable
+      var RTF_Filename: String?
         {
-          print("Nerp.");
+        didSet(newValue)
+        {
+          //If the RTF_Filename is nil or the empty string, don't do anything
+          if ((RTF_Filename ?? "").isEmpty)
+          {
+            return
+          }
+          //Use optional binding to try to get an URL to the
+          //specified filename in the app bundle. If that succeeds, try to load
+          //NSData from the file.
+          if let fileURL = NSBundle.mainBundle().URLForResource(RTF_Filename, withExtension: "rtf"),
+            
+            //If the fileURL loads, also try to load NSData from the URL.
+            let theData = NSData(contentsOfURL: fileURL)
+          {
+            var aString:NSAttributedString
+            do
+            {
+              //Try to load an NSAttributedString from the data
+              try
+                aString = NSAttributedString(data: theData,
+                  options: [:],
+                  documentAttributes:  nil
+              )
+              //If it succeeds, install the attributed string into the field.
+              self.attributedText = aString;
+            }
+            catch
+            {
+              print("Nerp.");
+            }
+          }
+          
         }
-      }
-      
       }
     }
-  }

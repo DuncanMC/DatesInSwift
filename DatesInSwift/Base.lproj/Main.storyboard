@@ -76,10 +76,7 @@
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="oON-8v-rp5"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content" base64-UTF8="YES">
-Cg
-</string>
+                                    <fragment content="xxx">
                                         <attributes>
                                             <font key="NSFont" size="20" name="Helvetica"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural">
