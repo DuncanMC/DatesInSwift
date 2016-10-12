@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE92B7601DAEFEF100411AA9 /* Dates.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AE92B75F1DAEFEF100411AA9 /* Dates.rtf */; };
 		AECB522F1ADFD46F00AC9E00 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB522E1ADFD46F00AC9E00 /* AppDelegate.swift */; };
 		AECB52311ADFD46F00AC9E00 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECB52301ADFD46F00AC9E00 /* ViewController.swift */; };
 		AECB52341ADFD46F00AC9E00 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AECB52321ADFD46F00AC9E00 /* Main.storyboard */; };
@@ -17,7 +18,6 @@
 		AED96A701AEA819900D1AA53 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED96A6F1AEA819900D1AA53 /* Types.swift */; };
 		AED96A751AEABCE400D1AA53 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED96A741AEABCE400D1AA53 /* UIViewExtensions.swift */; };
 		AEE26A001C372D2100BB2FB3 /* RTF_UITextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE269FF1C372D2100BB2FB3 /* RTF_UITextView.swift */; };
-		AEE26A021C3740DF00BB2FB3 /* Dates.rtf in Resources */ = {isa = PBXBuildFile; fileRef = AEE26A011C3740DF00BB2FB3 /* Dates.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		AE92B75F1DAEFEF100411AA9 /* Dates.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = Dates.rtf; sourceTree = "<group>"; };
 		AECB52291ADFD46F00AC9E00 /* DatesInSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DatesInSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AECB522D1ADFD46F00AC9E00 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AECB522E1ADFD46F00AC9E00 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -46,7 +47,6 @@
 		AED96A731AEA927100D1AA53 /* Creating clickable URLS in UITextField that open in your app.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = "Creating clickable URLS in UITextField that open in your app.md"; sourceTree = SOURCE_ROOT; };
 		AED96A741AEABCE400D1AA53 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		AEE269FF1C372D2100BB2FB3 /* RTF_UITextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RTF_UITextView.swift; sourceTree = "<group>"; };
-		AEE26A011C3740DF00BB2FB3 /* Dates.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; name = Dates.rtf; path = "../../../Users/duncan/delete me/Dates.rtf"; sourceTree = "<group>"; };
 		AEFC22781AE74B2C00ED02AA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
@@ -106,7 +106,7 @@
 		AECB522C1ADFD46F00AC9E00 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				AEE26A011C3740DF00BB2FB3 /* Dates.rtf */,
+				AE92B75F1DAEFEF100411AA9 /* Dates.rtf */,
 				AEFC22781AE74B2C00ED02AA /* README.md */,
 				AED96A731AEA927100D1AA53 /* Creating clickable URLS in UITextField that open in your app.md */,
 				AECB522D1ADFD46F00AC9E00 /* Info.plist */,
@@ -213,8 +213,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE92B7601DAEFEF100411AA9 /* Dates.rtf in Resources */,
 				AECB52341ADFD46F00AC9E00 /* Main.storyboard in Resources */,
-				AEE26A021C3740DF00BB2FB3 /* Dates.rtf in Resources */,
 				AECB52391ADFD46F00AC9E00 /* LaunchScreen.xib in Resources */,
 				AECB52361ADFD46F00AC9E00 /* Images.xcassets in Resources */,
 			);
