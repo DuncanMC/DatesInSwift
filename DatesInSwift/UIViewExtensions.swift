@@ -29,11 +29,11 @@ extension UIView
     {
     get
     {
-      return UIColor(CGColor: self.layer.borderColor!)
+      return UIColor(cgColor: self.layer.borderColor!)
     }
     set
     {
-      self.layer.borderColor = newValue.CGColor
+      self.layer.borderColor = newValue.cgColor
     }
   }
 }

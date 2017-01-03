@@ -8,6 +8,7 @@
 
 public typealias mdyTuple = (month: Int, day: Int, year: Int)
 
+
 import UIKit
 
 
@@ -16,15 +17,15 @@ import UIKit
 // MARK: - Global functions -
 //-------------------------------------------------------------------------------------------------------
 
-func date(mdy mdy: mdyTuple) ->NSDate?
+func date(mdy: mdyTuple) ->Date?
 {
 
-  let components = NSDateComponents()
+  var components = DateComponents()
   components.year = mdy.year
   components.month = mdy.month
   components.day = mdy.day
   
-  return DateUtils.gregorianCalendar.dateFromComponents(components)
+  return DateUtils.gregorianCalendar.date(from: components)
 }
 
 //-------------------------------------------------------------
@@ -43,7 +44,7 @@ This function only works for days that are in the same era.
 - returns: endDate.dayNumber - startDate.dayNumber
 */
 
-func daysBetweenDates(startDate startDate: NSDate, endDate: NSDate) -> Int
+func daysBetweenDates(startDate: Date, endDate: Date) -> Int
 {
   return endDate.dayNumber() - startDate.dayNumber()
 }
@@ -72,31 +73,31 @@ public func ==(lhs: mdyTuple, rhs: mdyTuple) -> Bool
 //Tell the system that NSDates can be compared with ==, >, >=, <, and <= operators
 
 //extension NSDate: Equatable {}
-extension NSDate: Comparable {}
+//extension Date: Comparable {}
 
 //-------------------------------------------------------------
 
 //Define the global operators for the
 //Equatable and Comparable protocols for comparing NSDates
 
-public func ==(lhs: NSDate, rhs: NSDate) -> Bool
+public func ==(lhs: Date, rhs: Date) -> Bool
 {
   return lhs.timeIntervalSince1970 == rhs.timeIntervalSince1970
 }
 
-public func <(lhs: NSDate, rhs: NSDate) -> Bool
+public func <(lhs: Date, rhs: Date) -> Bool
 {
   return lhs.timeIntervalSince1970 < rhs.timeIntervalSince1970
 }
-public func >(lhs: NSDate, rhs: NSDate) -> Bool
+public func >(lhs: Date, rhs: Date) -> Bool
 {
   return lhs.timeIntervalSince1970 > rhs.timeIntervalSince1970
 }
-public func <=(lhs: NSDate, rhs: NSDate) -> Bool
+public func <=(lhs: Date, rhs: Date) -> Bool
 {
   return lhs.timeIntervalSince1970 <= rhs.timeIntervalSince1970
 }
-public func >=(lhs: NSDate, rhs: NSDate) -> Bool
+public func >=(lhs: Date, rhs: Date) -> Bool
 {
   return lhs.timeIntervalSince1970 >= rhs.timeIntervalSince1970
 }
@@ -105,7 +106,7 @@ public func >=(lhs: NSDate, rhs: NSDate) -> Bool
 // MARK: - other NSDate extensions -
 //-------------------------------------------------------------------------------------------------------
 
-extension NSDate
+extension Date
 {
   /**
   This function returns a tuple containing the month, 
@@ -119,11 +120,11 @@ extension NSDate
     let calendar = DateUtils.gregorianCalendar
     
     //get the month/day/year componentsfor today's date.
-    let date_components = calendar.components(
-      [NSCalendarUnit.Year, NSCalendarUnit.Month, NSCalendarUnit.Day],
-      fromDate: self)
+    let date_components = (calendar as NSCalendar).components(
+      [NSCalendar.Unit.year, NSCalendar.Unit.month, NSCalendar.Unit.day],
+      from: self)
 
-    return (date_components.month, date_components.day, date_components.year)
+    return (date_components.month!, date_components.day!, date_components.year!)
   }
   
   /**
@@ -136,8 +137,8 @@ extension NSDate
   func dayNumber() -> Int
   {
     let calendar = DateUtils.gregorianCalendar
-    return calendar.ordinalityOfUnit(NSCalendarUnit.Day,
-      inUnit: NSCalendarUnit.Era, forDate: self)
+    return (calendar as NSCalendar).ordinality(of: NSCalendar.Unit.day,
+      in: NSCalendar.Unit.era, for: self)
   }
 }
 
@@ -153,5 +154,5 @@ extension NSDate
 */
 class DateUtils
 {
-  static let gregorianCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+  static let gregorianCalendar = Calendar(identifier: Calendar.Identifier.gregorian)
 }

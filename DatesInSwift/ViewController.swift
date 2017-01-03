@@ -19,7 +19,7 @@ import UIKit
 
   - returns: a string containing the possessive form
 */
-func possessiveNumber(aNumber: Int) -> String
+func possessiveNumber(_ aNumber: Int) -> String
 {
   let suffix: String
   if aNumber % 20 >= 11 &&  aNumber % 100 <= 19
@@ -70,24 +70,24 @@ class ViewController: UIViewController
   
   func setupObservers()
   {
-    let notificationCenter = NSNotificationCenter.defaultCenter()
+    let notificationCenter = NotificationCenter.default
 
-    selectDateObsever = notificationCenter.addObserverForName(
-      WTNotifications.selectDate,
+    selectDateObsever = notificationCenter.addObserver(
+      forName: NSNotification.Name(rawValue: WTNotifications.selectDate),
       object: nil,
       queue: nil,
-      usingBlock:
+      using:
       {
-        (note: NSNotification) -> Void in
-        if let userInfo = note.userInfo,
-          year = userInfo[SelectNoticeKeys.year] as? Int,
-          month = userInfo[SelectNoticeKeys.month] as? Int,
-          day = userInfo[SelectNoticeKeys.day] as? Int
+        (note: Notification) -> Void in
+        if let userInfo = (note as NSNotification).userInfo,
+          let year = userInfo[SelectNoticeKeys.year] as? Int,
+          let month = userInfo[SelectNoticeKeys.month] as? Int,
+          let day = userInfo[SelectNoticeKeys.day] as? Int
         {
           let mdy = mdyTuple(month: month, day: day, year: year)
           if let dateFromURL = date(mdy: mdy)
           {
-            self.datePicker.date = dateFromURL
+            self.datePicker.date = dateFromURL as Date
             self.handleOkButton(self)
           }
         }
@@ -135,12 +135,12 @@ required  init?(coder: NSCoder)
   // MARK: - IBAction methods -
   //-------------------------------------------------------------------------------------------------------
   
-  @IBAction func pickerValueChanged(sender: AnyObject)
+  @IBAction func pickerValueChanged(_ sender: AnyObject)
   {
     message = ""
   }
   
-  @IBAction func handleOkButton(sender: AnyObject)
+  @IBAction func handleOkButton(_ sender: AnyObject)
   {
 
     let bobsBirthday =    (month: 11, day: 30, year: 1961)
@@ -153,7 +153,7 @@ required  init?(coder: NSCoder)
     //Is the user-selected date in the past, present, or future?
     let prefix: String
     
-    let today = NSDate()
+    let today = Date()
     
     let daysFromSelectedDayToToday = datePicker.date.dayNumber() - today.dayNumber()
     if daysFromSelectedDayToToday == 0
@@ -169,7 +169,7 @@ required  init?(coder: NSCoder)
       prefix = "was"
     }
     
-    let todayMDY = NSDate().mdy()
+    let todayMDY = Date().mdy()
     let theMDY = datePicker.date.mdy()
     let date = NSString(format: "%02d/%02d/%04d", theMDY.month, theMDY.day, theMDY.year)
     
@@ -238,8 +238,8 @@ required  init?(coder: NSCoder)
     }
   }
   
-  func textView(textView: UITextView,
-    shouldInteractWithURL URL: NSURL,
+  func textView(_ textView: UITextView,
+    shouldInteractWithURL URL: Foundation.URL,
     inRange characterRange: NSRange) -> Bool
   {
     return true

@@ -24,10 +24,10 @@ import UIKit
           //Use optional binding to try to get an URL to the
           //specified filename in the app bundle. If that succeeds, try to load
           //NSData from the file.
-          if let fileURL = NSBundle.mainBundle().URLForResource(RTF_Filename, withExtension: "rtf"),
+          if let fileURL = Bundle.main.url(forResource: RTF_Filename, withExtension: "rtf"),
             
             //If the fileURL loads, also try to load NSData from the URL.
-            let theData = NSData(contentsOfURL: fileURL)
+            let theData = try? Data(contentsOf: fileURL)
           {
             var aString:NSAttributedString
             do

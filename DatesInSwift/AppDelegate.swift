@@ -14,7 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   var window: UIWindow?
   
   
-  func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool
+  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool
   {
     
     //Code to generate random mm/dd/yyyy dates from Jan 1, 1930 to Dec 1, 2002
@@ -36,7 +36,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     return true
   }
   
-  func applicationWillResignActive(application: UIApplication) {
+  func applicationWillResignActive(_ application: UIApplication) {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
   }
@@ -51,25 +51,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
   
   The app's view controller presents a UITextView that loads the encoded content of an RTF file including links using the WTDateLink:// prefix. Tapping one of those links triggers this method, which sends a notifcation to the view controller.
   */
-  func application(application: UIApplication,
-    openURL url: NSURL,
+  func application(_ application: UIApplication,
+    open url: URL,
     sourceApplication: String?,
-    annotation: AnyObject) -> Bool
+    annotation: Any) -> Bool
   {
-    var infoDictionary: [NSObject : AnyObject]?
+    var infoDictionary: [AnyHashable: Any]?
     
     //An URL's "query" is everthing after the "?" (should be the "date=..." bit for our URLs)
     if
-      let theQuery = url.query?.lowercaseString,
-      let range = theQuery.rangeOfString("date=")
+      let theQuery = url.query?.lowercased(),
+      let range = theQuery.range(of: "date=")
     {
-      let dateString = theQuery.substringFromIndex(range.endIndex)
+      let dateString = theQuery.substring(from: range.upperBound)
       
       //if the dateString is "today", create an
       //infoDictonary with the components of today's date.
       if dateString == "today"
       {
-        let todayMDY = NSDate().mdy()
+        let todayMDY = Date().mdy()
         infoDictionary = [
           SelectNoticeKeys.month: todayMDY.month,
           SelectNoticeKeys.day:   todayMDY.day,
@@ -78,12 +78,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Otherwise, try to parse a string in the form MM_DD_YYYY
       else
       {
-        let components = dateString.componentsSeparatedByString("_")
+        let components = dateString.components(separatedBy: "_")
         if components.count == 3
         {
           if let month = Int((components[0] as String)),
-            day = Int((components[1] as String)),
-            year = Int((components[2] as String))
+            let day = Int((components[1] as String)),
+            let year = Int((components[2] as String))
           {
             if month != 0 && day != 0 && year != 0
             {
@@ -101,8 +101,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     //post a notification to the NSNotificationCenter.
     if infoDictionary != nil
     {
-      NSNotificationCenter.defaultCenter().postNotificationName(
-        WTNotifications.selectDate,
+      NotificationCenter.default.post(
+        name: Notification.Name(rawValue: WTNotifications.selectDate),
         object: nil,
         userInfo: infoDictionary
       )
