@@ -15,21 +15,16 @@ import UIKit
   This function returns a possessive form for a number,
   e.g. 1st for 1 or 3rd for 3.description
 
-  - parameter aNumber:: Int - the number to convert.
+  - parameter aNumber: Int - the number to convert.
 
   - returns: a string containing the possessive form
 */
-func possessiveNumber(_ aNumber: Int) -> String
-{
+func possessiveNumber(_ aNumber: Int) -> String {
   let suffix: String
-  if aNumber % 20 >= 11 &&  aNumber % 100 <= 19
-  {
+  if aNumber % 20 >= 11 &&  aNumber % 100 <= 19 {
     suffix = "th"
-  }
-  else
-  {
-  switch aNumber % 10
-  {
+  } else {
+  switch aNumber % 10 {
   case 0, 4...9:
     suffix = "th"
   case 1:
@@ -47,9 +42,8 @@ func possessiveNumber(_ aNumber: Int) -> String
 //-------------------------------------------------------------------------------------------------------
 // MARK: - ViewController class  -
 //-------------------------------------------------------------------------------------------------------
-class ViewController: UIViewController
-{
-  var selectDateObsever: NSObjectProtocol?
+class ViewController: UIViewController {
+  @objc var selectDateObsever: NSObjectProtocol?
   //-------------------------------------------------------------
   // - MARK: - IBOutlets
   //-------------------------------------------------------------
@@ -60,7 +54,7 @@ class ViewController: UIViewController
   //-------------------------------------------------------------
   // - MARK: - Instance variables
   //-------------------------------------------------------------
-  var message: String = ""
+  @objc var message: String = ""
     {
     didSet
     {
@@ -68,7 +62,7 @@ class ViewController: UIViewController
     }
   }
   
-  func setupObservers()
+  @objc func setupObservers()
   {
     let notificationCenter = NotificationCenter.default
 
@@ -238,7 +232,7 @@ required  init?(coder: NSCoder)
     }
   }
   
-  func textView(_ textView: UITextView,
+  @objc func textView(_ textView: UITextView,
     shouldInteractWithURL URL: Foundation.URL,
     inRange characterRange: NSRange) -> Bool
   {
