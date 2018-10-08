@@ -42,7 +42,7 @@ func possessiveNumber(_ aNumber: Int) -> String {
 //-------------------------------------------------------------------------------------------------------
 // MARK: - ViewController class  -
 //-------------------------------------------------------------------------------------------------------
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextViewDelegate {
   @objc var selectDateObsever: NSObjectProtocol?
   //-------------------------------------------------------------
   // - MARK: - IBOutlets
@@ -231,12 +231,14 @@ required  init?(coder: NSCoder)
       message = "The selected date \(prefix) \(date)"
     }
   }
-  
-  @objc func textView(_ textView: UITextView,
-    shouldInteractWithURL URL: Foundation.URL,
-    inRange characterRange: NSRange) -> Bool
-  {
-    return true
-  }
+
+    //It looks like this delegate method is not required. If you don't implement it your UITextView tries to handle the URL.
+//  @objc func textView(_ textView: UITextView, shouldInteractWith
+//    URL: Foundation.URL,
+//    in characterRange: NSRange,
+//    interaction: UITextItemInteraction) -> Bool
+//  {
+//    return true
+//  }
 }
 
